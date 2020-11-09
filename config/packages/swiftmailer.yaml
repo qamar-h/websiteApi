@@ -1,0 +1,8 @@
+swiftmailer:
+    transport:           '%env(MAIL_TRANSPORT)%'
+    username:            '%env(MAIL_USER)%'
+    password:            '%env(MAIL_PASS)%'
+    host:                '%env(MAIL_HOST)%'
+    port:                '%env(MAIL_PORT)%'
+    encryption:          '%env(MAIL_ENCRYPTION)%'
+    auth_mode:            ~
