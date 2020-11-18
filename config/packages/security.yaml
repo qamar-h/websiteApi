@@ -16,7 +16,7 @@ security:
             security: false
 
         api:
-            pattern: ^/api
+            pattern: ^/v1
             stateless: true
             anonymous: true
             provider: users_in_memory
@@ -38,18 +38,18 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/authentication_token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/api/users, roles: IS_AUTHENTICATED_FULLY}
-        - { path: ^/api/mails, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [POST] }
-        - { path: ^/api/mails, roles: IS_AUTHENTICATED_FULLY}
-        - { path: ^/api/formations, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
-        - { path: ^/api/formations, roles: IS_AUTHENTICATED_FULLY}
-        - { path: ^/api/experiences, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
-        - { path: ^/api/experiences, roles: IS_AUTHENTICATED_FULLY}
-        - { path: ^/api/hobbies, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
-        - { path: ^/api/hobbies, roles: IS_AUTHENTICATED_FULLY}
-        - { path: ^/api/items, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
-        - { path: ^/api/items, roles: IS_AUTHENTICATED_FULLY}
-        - { path: ^/api/socials, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
-        - { path: ^/api/socials, roles: IS_AUTHENTICATED_FULLY}
+        - { path: ^/v1/users, roles: IS_AUTHENTICATED_FULLY}
+        - { path: ^/v1/mails, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [POST] }
+        - { path: ^/v1/mails, roles: IS_AUTHENTICATED_FULLY}
+        - { path: ^/v1/formations, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
+        - { path: ^/v1/formations, roles: IS_AUTHENTICATED_FULLY}
+        - { path: ^/v1/experiences, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
+        - { path: ^/v1/experiences, roles: IS_AUTHENTICATED_FULLY}
+        - { path: ^/v1/hobbies, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
+        - { path: ^/v1/hobbies, roles: IS_AUTHENTICATED_FULLY}
+        - { path: ^/v1/items, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
+        - { path: ^/v1/items, roles: IS_AUTHENTICATED_FULLY}
+        - { path: ^/v1/socials, roles: IS_AUTHENTICATED_ANONYMOUSLY, methods: [GET] }
+        - { path: ^/v1/socials, roles: IS_AUTHENTICATED_FULLY}
 
 
