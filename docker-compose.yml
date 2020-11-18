@@ -1,0 +1,23 @@
+version: "3"
+services:
+
+  api:
+    container_name: qamarh_api
+    image: qamarh/websiteapi:latest
+    ports:
+      - "8003:80"
+    volumes:
+      - /var/www/html/qamarhApi/.env:/var/www/html/.env
+      - /var/www/html/qamarhApi/config/jwt/:/var/www/html/config/jwt/
+    depends_on:
+      - db
+
+  db:
+    container_name: mariadb10.3
+    image: mariadb:10.3
+    environment:
+      MYSQL_ROOT_PASSWORD: db_password
+    ports:
+      - "3334:3306"
+    volumes:
+      - /var/www/html/mysql:/var/lib/mysql
